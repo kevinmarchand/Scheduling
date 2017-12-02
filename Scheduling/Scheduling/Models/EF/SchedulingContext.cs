@@ -15,7 +15,15 @@ namespace Scheduling.Models.EF
 
         public SchedulingContext() : base("name=SchedulingDBConnectionString")
         {
-
+            Database.SetInitializer<SchedulingContext>(new DropCreateDatabaseAlways<SchedulingContext>());
         }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Schedule>()
+        //        .HasOptional<Department>(s => s.Department)
+        //        .WithMany()
+        //        .WillCascadeOnDelete(false);
+        //}
     }
 }

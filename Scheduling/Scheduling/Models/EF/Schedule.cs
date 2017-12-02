@@ -9,7 +9,6 @@ namespace Scheduling.Models.EF
     {
         public Schedule()
         {
-            this.Departments = new HashSet<Department>();
         }
 
         public int ScheduleId { get; set; }
@@ -17,6 +16,13 @@ namespace Scheduling.Models.EF
         public DateTime Stop { get; set; }
         public string Comment { get; set; }
 
-        public virtual ICollection<Department> Departments { get; set; }
+        public int DepartmentId { get; set; }
+        public Department Department { get; set; }
+
+        public int JobId { get; set; }
+        public Job Job { get; set; }
+
+        public int EmployeeId { get; set; }
+        public Employee Employee { get; set; }
     }
 }

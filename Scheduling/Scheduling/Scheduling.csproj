@@ -156,9 +156,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712021141566_DatabaseCreation.cs" />
-    <Compile Include="Migrations\201712021141566_DatabaseCreation.Designer.cs">
-      <DependentUpon>201712021141566_DatabaseCreation.cs</DependentUpon>
+    <Compile Include="Migrations\201712022122537_Creation.cs" />
+    <Compile Include="Migrations\201712022122537_Creation.Designer.cs">
+      <DependentUpon>201712022122537_Creation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EF\Department.cs" />
@@ -260,8 +260,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712021141566_DatabaseCreation.resx">
-      <DependentUpon>201712021141566_DatabaseCreation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712022122537_Creation.resx">
+      <DependentUpon>201712022122537_Creation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

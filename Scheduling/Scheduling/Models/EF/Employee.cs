@@ -10,6 +10,7 @@ namespace Scheduling.Models.EF
     {
         public Employee()
         {
+            this.Schedules = new HashSet<Schedule>();
             this.Jobs = new HashSet<Job>();
         }
 
@@ -18,6 +19,8 @@ namespace Scheduling.Models.EF
         public string Lastname { get; set; }
         [NotMapped]
         public string Fullname { get; set; }
+
+        public virtual ICollection<Schedule> Schedules { get; set; }
 
         public virtual ICollection<Job> Jobs { get; set; }
     }

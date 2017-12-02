@@ -17,6 +17,7 @@ namespace Scheduling.Models.EF
         public string Title { get; set; }
 
         public virtual ICollection<Schedule> Schedules { get; set; }
+
         public virtual ICollection<Job> Jobs { get; set; }
     }
 }
