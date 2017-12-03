@@ -18,7 +18,12 @@ namespace Scheduling.Models.EF
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         [NotMapped]
-        public string Fullname { get; set; }
+        public string Fullname
+        {
+            get {
+                return this.Firstname + " " + this.Lastname;
+            }
+        }
 
         public ICollection<ScheduleDetail> ScheduleDetails { get; set; }
 

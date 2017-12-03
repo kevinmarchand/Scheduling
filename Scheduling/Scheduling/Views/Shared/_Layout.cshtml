@@ -8,7 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-
+    <!-- Site CSS -->
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -21,6 +22,21 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    @Html.ActionLink("Departments", "Index", "Departments", new { area = "" }, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active">
+                    @Html.ActionLink("Employees", "Index", "Employees", new { area = "" }, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active">
+                    @Html.ActionLink("Jobs", "Index", "Jobs", new { area = "" }, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active">
+                    @Html.ActionLink("Sops", "Index", "JobSops", new { area = "" }, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active">
+                    @Html.ActionLink("Schedules", "Index", "Schedules", new { area = "" }, new { @class = "nav-link" })
+                </li>
                 <li class="nav-item active">
                     @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })
                 </li>
@@ -48,7 +64,7 @@
     <script src="~/Scripts/jquery-3.2.1.slim.min.js"></script>
     <script src="~/Scripts/umd/popper.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 

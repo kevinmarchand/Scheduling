@@ -152,7 +152,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Controllers\JobSopsController.cs" />
+    <Compile Include="Controllers\SchedulesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,6 +166,7 @@
       <DependentUpon>201712031142083_Creation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AssignedJobSopData.cs" />
     <Compile Include="Models\EF\Department.cs" />
     <Compile Include="Models\EF\Employee.cs" />
     <Compile Include="Models\EF\Job.cs" />
@@ -246,6 +252,31 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\JobSops\Create.cshtml" />
+    <Content Include="Views\JobSops\Delete.cshtml" />
+    <Content Include="Views\JobSops\Details.cshtml" />
+    <Content Include="Views\JobSops\Edit.cshtml" />
+    <Content Include="Views\JobSops\Index.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Departments\Details.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Jobs\Create.cshtml" />
+    <Content Include="Views\Jobs\Delete.cshtml" />
+    <Content Include="Views\Jobs\Details.cshtml" />
+    <Content Include="Views\Jobs\Edit.cshtml" />
+    <Content Include="Views\Jobs\Index.cshtml" />
+    <Content Include="Views\Schedules\Create.cshtml" />
+    <Content Include="Views\Schedules\Delete.cshtml" />
+    <Content Include="Views\Schedules\Details.cshtml" />
+    <Content Include="Views\Schedules\Edit.cshtml" />
+    <Content Include="Views\Schedules\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
