@@ -13,7 +13,7 @@ namespace Scheduling.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712022122537_Creation"; }
+            get { return "201712031142083_Creation"; }
         }
         
         string IMigrationMetadata.Source

@@ -9,18 +9,19 @@ namespace Scheduling.Models.EF
     {
         public Job()
         {
-            this.Schedules = new HashSet<Schedule>();
-            this.Employees = new HashSet<Employee>();
+            this.ScheduleDetails = new HashSet<ScheduleDetail>();
+            
         }
 
         public int JobId { get; set; }
         public string Title { get; set; }
 
-        public int DeparmentId { get; set; }
+        public int DepartmentId { get; set; }
         public Department Department { get; set; }
 
-        public virtual ICollection<Employee> Employees { get; set; }
+        public int JobSopId { get; set; }
+        public JobSop JobSop { get; set; }
 
-        public virtual ICollection<Schedule> Schedules { get; set; }
+        public ICollection<ScheduleDetail> ScheduleDetails { get; set; }
     }
 }

@@ -156,15 +156,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712022122537_Creation.cs" />
-    <Compile Include="Migrations\201712022122537_Creation.Designer.cs">
-      <DependentUpon>201712022122537_Creation.cs</DependentUpon>
+    <Compile Include="Migrations\201712031142083_Creation.cs" />
+    <Compile Include="Migrations\201712031142083_Creation.Designer.cs">
+      <DependentUpon>201712031142083_Creation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EF\Department.cs" />
     <Compile Include="Models\EF\Employee.cs" />
     <Compile Include="Models\EF\Job.cs" />
+    <Compile Include="Models\EF\JobSop.cs" />
     <Compile Include="Models\EF\Schedule.cs" />
+    <Compile Include="Models\EF\ScheduleDetail.cs" />
     <Compile Include="Models\EF\SchedulingContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -260,8 +262,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712022122537_Creation.resx">
-      <DependentUpon>201712022122537_Creation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712031142083_Creation.resx">
+      <DependentUpon>201712031142083_Creation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

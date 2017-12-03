@@ -5,19 +5,18 @@ using System.Web;
 
 namespace Scheduling.Models.EF
 {
-    public class Department
+    public class JobSop
     {
-        public Department()
+        public JobSop()
         {
-            this.ScheduleDetails = new HashSet<ScheduleDetail>();
             this.Jobs = new HashSet<Job>();
+            this.Employees = new HashSet<Employee>();
         }
-
-        public int DepartmentId { get; set; }
+        public int JobSopId { get; set; }
         public string Title { get; set; }
 
-        public ICollection<ScheduleDetail> ScheduleDetails { get; set; }
-
         public ICollection<Job> Jobs { get; set; }
+
+        public ICollection<Employee> Employees { get; set; }
     }
 }
