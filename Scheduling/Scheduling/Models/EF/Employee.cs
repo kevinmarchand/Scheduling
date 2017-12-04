@@ -15,6 +15,7 @@ namespace Scheduling.Models.EF
         }
 
         public int EmployeeId { get; set; }
+        public int Seniority { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         [NotMapped]
