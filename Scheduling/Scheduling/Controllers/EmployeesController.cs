@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Scheduling.Models;
 using Scheduling.Models.EF;
 
 namespace Scheduling.Controllers
@@ -65,11 +66,16 @@ namespace Scheduling.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employees.Find(id);
+            //Employee employee = db.Employees.Find(id);
+            Employee employee = db.Employees
+                .Include(e => e.JobSops)
+                .Where(e => e.EmployeeId == id)
+                .Single();
             if (employee == null)
             {
                 return HttpNotFound();
             }
+            PopulateAssignedJobSopsData(employee);
             return View(employee);
         }
 
@@ -78,15 +84,26 @@ namespace Scheduling.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeId,Firstname,Lastname")] Employee employee)
+        //public ActionResult Edit([Bind(Include = "EmployeeId,Firstname,Lastname")] Employee employee)
+        public ActionResult Edit(int? id, string[] selectedJobSops)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                db.Entry(employee).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            return View(employee);
+
+            var employeeToUpdate = db.Employees
+                .Include(js => js.JobSops)
+                .Where(e => e.EmployeeId == id)
+                .Single();
+
+            //if (ModelState.IsValid)
+            //{
+            //    db.Entry(employee).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+            //return View(employee);
         }
 
         // GET: Employees/Delete/5
@@ -122,6 +139,25 @@ namespace Scheduling.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+
+
+        private void PopulateAssignedJobSopsData(Employee employee)
+        {
+            var allJobSops = db.JobSops;
+            var employeeJobSops = new HashSet<int>(employee.JobSops.Select(js => js.JobSopId));
+            var viewModel = new List<AssignedJobSopData>();
+            foreach (var jobsop in allJobSops)
+            {
+                viewModel.Add(new AssignedJobSopData
+                {
+                    JobSopId = jobsop.JobSopId,
+                    Title = jobsop.Title,
+                    Assigned = employeeJobSops.Contains(jobsop.JobSopId)
+                });
+            }
+            ViewBag.JobSops = viewModel;
         }
     }
 }
