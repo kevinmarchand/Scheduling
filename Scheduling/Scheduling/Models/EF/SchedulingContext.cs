@@ -16,7 +16,7 @@ namespace Scheduling.Models.EF
         public DbSet<JobSop> JobSops { get; set; }
         public DbSet<Employee> Employees { get; set; }
 
-        public SchedulingContext() : base("name=SchedulingDBConnectionString")
+        public SchedulingContext() : base("name=SchedulingDBConnectionStringWORK")
         {
             //Database.SetInitializer<SchedulingContext>(new DropCreateDatabaseAlways<SchedulingContext>());
         }

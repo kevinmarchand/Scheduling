@@ -1,0 +1,66 @@
+﻿@model Scheduling.Models.EF.ScheduleDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ScheduleDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Schedule.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Schedule.Comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Formation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Formation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ScheduleDetailId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

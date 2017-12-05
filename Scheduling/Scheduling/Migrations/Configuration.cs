@@ -11,7 +11,7 @@ namespace Scheduling.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Scheduling.Models.EF.SchedulingContext context)

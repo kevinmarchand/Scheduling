@@ -38,6 +38,9 @@
                     @Html.ActionLink("Schedules", "Index", "Schedules", new { area = "" }, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item active">
+                    @Html.ActionLink("ScheduleDetails", "Index", "ScheduleDetails", new { area = "" }, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item active">
                     @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item active">
@@ -61,7 +64,7 @@
     <!-- END CONTENT -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="~/Scripts/jquery-3.2.1.slim.min.js"></script>
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/umd/popper.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     @RenderSection("scripts", required: false)
